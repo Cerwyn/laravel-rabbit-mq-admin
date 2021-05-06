@@ -25,7 +25,7 @@ class ProductController extends Controller
     {
         $product = Product::create($request->only('title', 'image'));
 
-        ProductCreated::dispatch($product->toArray());
+        ProductCreated::dispatch($product->toArray())->onQueue('main_queue');
 
         return response($product, Response::HTTP_CREATED);
     }
@@ -36,7 +36,7 @@ class ProductController extends Controller
 
         $product->update($request->only('title', 'image'));
 // return response($product, 200);
-        ProductUpdated::dispatch($product->toArray());
+        ProductUpdated::dispatch($product->toArray())->onQueue('main_queue');
 
         return response($product, Response::HTTP_ACCEPTED);
     }

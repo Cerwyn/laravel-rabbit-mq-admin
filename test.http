@@ -1,8 +1,9 @@
-@baseUrl = http://localhost:8000
+@baseUrl = http://localhost:8001
 
-delete {{baseUrl}}/api/products/31
+post {{baseUrl}}/api/products/13/like
 Accept: application/json
 Content-Type: application/json
+
 
 # {
 #     "title" : "new title2",
