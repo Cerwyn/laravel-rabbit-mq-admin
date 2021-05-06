@@ -1,0 +1,10 @@
+@baseUrl = http://localhost:8000
+
+delete {{baseUrl}}/api/products/31
+Accept: application/json
+Content-Type: application/json
+
+# {
+#     "title" : "new title2",
+#     "image" : "new Image2"
+# }
